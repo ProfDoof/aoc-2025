@@ -3,7 +3,7 @@ use nom::combinator::{eof, opt};
 use nom::multi::many0;
 use nom::sequence::terminated;
 use nom::{sequence::separated_pair, IResult};
-use nom::character::complete::{i32, line_ending, multispace0, u32};
+use nom::character::complete::{line_ending, multispace0, u32};
 
 pub(crate) struct DayOne;
 

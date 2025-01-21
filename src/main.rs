@@ -4,7 +4,6 @@ use std::path::PathBuf;
 
 use anyhow::Result;
 use clap::{Parser, Subcommand};
-use days::Day;
 
 /// The commandline tool to run all of my advent of code solutions
 #[derive(Parser, Clone, Debug)]
@@ -70,10 +69,10 @@ enum AdventDay {
 }
 
 impl AdventDay{
-    fn day(&self) -> impl crate::days::Day {
+    fn day(&self) -> Box<dyn crate::days::Day> {
         match self {
-            AdventDay::One => crate::days::one::DayOne,
-            AdventDay::Two => todo!(),
+            AdventDay::One => Box::new(crate::days::one::DayOne),
+            AdventDay::Two => Box::new(crate::days::two::DayTwo),
             AdventDay::Three => todo!(),
             AdventDay::Four => todo!(),
             AdventDay::Five => todo!(),
