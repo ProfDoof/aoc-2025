@@ -73,7 +73,7 @@ impl AdventDay{
         match self {
             AdventDay::One => Box::new(crate::days::one::DayOne),
             AdventDay::Two => Box::new(crate::days::two::DayTwo),
-            AdventDay::Three => todo!(),
+            AdventDay::Three => Box::new(crate::days::three::DayThree),
             AdventDay::Four => todo!(),
             AdventDay::Five => todo!(),
             AdventDay::Six => todo!(),
